@@ -1,0 +1,104 @@
+﻿ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styl.css">
+<meta charset="utf-8">
+<title>Registration form</title>
+</head>
+
+<body>
+<center>
+
+<div class="title"><h1><b>Registration</b></h1></div>
+<table width=400 border=0>
+<form>
+<tr>
+<td>Name:</td>
+<td> <input type="text" name="name", placeholder="Enter your name"> </td>
+</tr>
+<tr>
+<td>Password</td>
+<td> <input type="password" name="pw"> </td>
+</tr>
+<tr>
+<td>Email:</td>
+<td> <input type="email" name="mail"> </td>
+</tr>
+<tr>
+<td>Date of Birth:</td>
+<td> <input type="date" name="date"> </td>
+</tr>
+<tr>
+<td>Grade:</td>
+<td> <input type="text" name="grade"> </td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>
+    <input type="radio" name="gender" value="Male"> Male <br/>
+	<input type="radio" name="gender" value="Female"> Female 
+</td>
+</tr>
+<tr>
+<td>Marital status:</td>
+<td>
+
+    <input type="radio" name="marital" value="sing"> Single<br/>
+	<input type="radio" name="marital" value="sing"> Married<br/>
+	<input type="radio" name="marital" value="sing"> Divorced<br/>
+	<input type="radio" name="marital" value="sing"> Widower
+</td>
+</tr>
+<tr>
+<td>Languages:</td>
+<td>
+    <input type="checkbox" name="lang" value="eng"> English<br/>
+	<input type="checkbox" name="lang" value="de"> German<br/>
+	<input type="checkbox" name="lang" value="rus"> Russian<br/>
+	<input type="checkbox" name="lang" value="rus"> Other
+</td>
+</tr>
+<tr>
+<td>Nationality</td>
+<td>
+<select>
+    <option value="sk"> Slovak</option><br/>
+	<option value="hu"> Hungarian</option><br/>
+	<option value="de"> German</option><br/>
+	<option value="cz"> Czech</option><br/>
+	<option value="ukr"> Ukrainan</option><br/>
+	<option value="rus"> Russian</option><br/>
+	<option value="other"> Other</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>About</td>
+<td>
+<textarea rows="8" cols="25"> </textarea>
+</td>
+</tr>
+<tr>
+<td>Your CV:</td>
+<td>
+<input type = "file"/>
+</td>
+</tr>
+<tr>
+<td>Are yoy happy?</td>
+<td>
+Yes<input type = "range" name="slide" min="0" max="1"/>No
+</td>
+</tr>
+<tr>
+<td><input type="reset" value="Reset"></td>
+<td><input type="submit" value="Submit"></td>
+</tr>
+</form>
+</table>
+</center>
+
+
+</body>
+</html> 
+
