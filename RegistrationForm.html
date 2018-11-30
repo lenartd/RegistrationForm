@@ -4,6 +4,82 @@
 <link rel="stylesheet" type="text/css" href="styl.css">
 <meta charset="utf-8">
 <title>Registration form</title>
+<script>
+function CheckForm()
+{
+     let user=document.getElementsByName('name')[0].value;
+	 let password=document.getElementsByName('pw')[0].value;
+	 let maill=document.getElementsByName('mail')[0].value;
+	 if(user.length<2)
+	 {
+	     document.getElementById("errorName").innerHTML="*Name is mandatory item!";
+	 }
+	 else
+	 {
+	     document.getElementById("errorName").innerHTML="";
+	 }
+	 
+	 if(password.length<7)
+	 {
+	     document.getElementById("errorPassword").innerHTML="*Password is too weak";
+	 }
+	 else
+	 {
+	     document.getElementById("errorPassword").innerHTML="";
+	 }
+	 
+	 let lower =false;
+	 let upper =false;
+	 let number =false;
+	 for(i=0; i<=password.length-1; i++)
+	 {
+	     console.log(password[i]);
+	     if(password[i] == password[i].toLowerCase())
+		 {
+		     lower =true;
+		 }
+		 if(!isNaN(password[i]))
+		 {
+		     number =true;
+		 }
+		 else
+		 {
+		     if(password[i] == password[i].toUpperCase())
+		     {
+		         upper =true;
+		     }
+		 }
+	 }
+	 if(lower==true & upper==true & number==true)
+	 {
+	      document.getElementById("errorPassword").innerHTML="";
+	 }
+	 else
+	 {
+	      document.getElementById("errorPassword").innerHTML="*Password is too weak";
+	 }
+	 
+	 let zav =0;
+	 for(i=0; i<=maill.length; i++)
+	 {
+	    if(maill[i] == '@')
+		{
+		   zav=1;
+		}
+	 }
+	 console.log(zav);
+	 if(zav==1)
+	 {
+	     document.getElementById("errorMail").innerHTML="";
+	 }
+	 else
+	 {
+	     document.getElementById("errorMail").innerHTML="The email does not include @";
+	 }
+}
+
+</script>
+
 </head>
 
 <body>
@@ -14,15 +90,21 @@
 <form>
 <tr>
 <td>Name:</td>
-<td> <input type="text" name="name", placeholder="Enter your name"> </td>
+<td> <input type="text" name="name", placeholder="Enter your name">
+<div class="errorMessage" id="errorName"></div>
+ </td>
 </tr>
 <tr>
 <td>Password</td>
-<td> <input type="password" name="pw"> </td>
+<td> <input type="password" name="pw">
+<div class="errorMessage" id="errorPassword"></div>
+ </td>
 </tr>
 <tr>
 <td>Email:</td>
-<td> <input type="email" name="mail"> </td>
+<td> <input type="email" name="mail">
+<div class="errorMessage" id="errorMail"></div>
+ </td>
 </tr>
 <tr>
 <td>Date of Birth:</td>
@@ -92,7 +174,7 @@ Yes<input type = "range" name="slide" min="0" max="1"/>No
 </tr>
 <tr>
 <td><input type="reset" value="Reset"></td>
-<td><input type="submit" value="Submit"></td>
+<td><input type="button" value="Submit" onClick="CheckForm()"></td>
 </tr>
 </form>
 </table>
