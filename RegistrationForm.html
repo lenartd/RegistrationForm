@@ -77,7 +77,17 @@ function CheckForm()
 	     document.getElementById("errorMail").innerHTML="The email does not include @";
 	 }
 }
-
+	function toggleBox() 
+	{
+        if (document.getElementById('otherlang').checked == true) 
+		{
+              document.getElementById('other').style.display = 'block';
+		} 
+		else 
+		{
+              document.getElementById('other').style.display = 'none';
+        }
+    }
 </script>
 
 </head>
@@ -137,7 +147,8 @@ function CheckForm()
     <input type="checkbox" name="lang" value="eng"> English<br/>
 	<input type="checkbox" name="lang" value="de"> German<br/>
 	<input type="checkbox" name="lang" value="rus"> Russian<br/>
-	<input type="checkbox" name="lang" value="rus"> Other
+	<input type="checkbox" name="lang" id="otherlang" onclick="toggleBox()" value="other"> Other
+	<input type="textbox" id="other" style="display:none">
 </td>
 </tr>
 <tr>
